@@ -1,13 +1,9 @@
-var express = require('express');
-var queryString = require('querystring');
-var bodyParser = require('body-parser');
-var cookieParser = require('cookie-parser');
-// var _ = require ('lodash');
+var http = require('http');
+var GameController = require('./lib/gameController.js');
+var game = require('./lib/game.js');
 
-var app = express();
+var controller = GameController(new game());
 
-var createGame = require('./createGame');
-var gameStore = require('./gamestore');
-
-app.use(cookieParser());
-app.use(bodyParser.urlencoded({ extended: true }));
+http.createServer(controller).listen(3456).on('error',function(err){
+	console.log(err.message);
+});
