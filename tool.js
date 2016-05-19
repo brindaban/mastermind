@@ -68,5 +68,5 @@ module.isTerminate = function(secretCode,result,count){
 module.startingNotification = function(){
 	console.log('\t\tyou are using ',5,'digits\t\twhich contains numbers from 1 -',7,
 			'\n\t\tred : for correct number and correct position',
-			'\tgreen : for correct number and worng position');
+			'\tgreen : for correct number and wrong position');
 };
